@@ -1,0 +1,23 @@
+<link href="../../assets/loginstyle.css" rel="stylesheet" />
+
+
+<div class="main-div">
+  <form class="box"  [formGroup]="loginForm" (ngSubmit)="onSubmit(Email.value,Password.value)">
+    <h1>login</h1>
+    <input type="text" name="Email" placeholder="Enter your Email"
+    #Email ngModel  [pattern]="emailPattern" formControlName="email">
+    <span class="error" *ngIf="email.invalid && email.touched">Email is required</span>
+    <input type="password" name="Password" placeholder="Enter your Password"
+    #Password ngModel  formControlName="password">
+    <span class="error" *ngIf="password.invalid && password.touched">Password is required</span>
+    <div class="row form-group" *ngIf="msgErorr!=''">
+      <div class="alert-danger col s12 form-control" style="margin: 0px;">
+        <label>{{msgErorr}}</label>
+      
+      </div>
+    </div>
+    <button type="submit" class="btn-login" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div>
+     
+ 

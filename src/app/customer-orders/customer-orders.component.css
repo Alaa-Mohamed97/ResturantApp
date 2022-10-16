@@ -1,0 +1,35 @@
+
+.page-title{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 22px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #fb8c01;
+    /*color: white;*/
+    padding: 8px 0;
+}
+.maintable{
+    background-color: #fb8c01;
+   /* color: white;*/
+}
+.subtable{
+    color: black;
+}
+.accordion{
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+    background-color: #eee;
+    color: #444;
+    border: none;
+}
+.active ,.accordion:hover{
+    background-color: #ccc;
+}
+.panel{
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}

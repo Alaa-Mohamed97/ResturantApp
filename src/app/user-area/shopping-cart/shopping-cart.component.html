@@ -1,0 +1,106 @@
+<div class="content" style="display: flex;
+justify-content: center;
+margin: 20px 0;">
+  <div class="main-cart" *ngIf="cartList !=''">
+    <div class="cart">
+      <p style="text-align: left;">
+        <strong>Shopping Cart</strong>
+      </p>
+      <div class="fixedtablehead">
+        <table class="table ">
+          <thead>
+            <tr>
+
+              <th>Image</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th></th>
+              <th></th>
+              <th>Peace Price</th>
+              <th>Total Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartList; let i= index;">
+
+              <td>
+                <img src="https://localhost:44388/Photos/{{item.img}}" width="50" height="50">
+              </td>
+              <td>{{item.name}}</td>
+              <td colspan="3">
+
+                <button class="btn-operations" (click)="minus(item.cartId)" id="{{item.cartId}}"
+                  onclick="minus(this.id)">-</button>
+
+
+                <span style="padding: 0 9px;" id="quantity_{{item.cartId}}">{{item.quantity}}</span>
+                <button class="btn-operations" (click)="plus(item.cartId)" id="{{item.cartId}}"
+                  onclick="plus(this.id)">+</button>
+
+              </td>
+              <td>{{item.price}} $</td>
+              <td>{{item.price*item.quantity}} $</td>
+              <td><button class="btn btn-danger" (click)="delete(item.cartId)">Delete</button></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+      <hr>
+      <div style="float: right;">
+
+        <p class="total-price"><span>Total Price:</span><span style="float: right;">{{totalprice}} $</span>
+          <small style="display: block;text-transform: capitalize;">
+            number of item={{indecator}}
+          </small>
+        </p>
+
+
+        <button type="button" class="btn btn-primary float-right m-2 btn-checkout" data-toggle="modal"
+          data-target="#exampleModal" data-backdrop="static" data-keyboard="false" (click)="showmodal()">
+
+          Checkout
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Enter Your Data</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="username" class="form-control" placeholder="Enter User Name">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="address" class="form-control" placeholder="Enter Your Address">
+          </div>
+          <button (click)="saveorder()" class="btn btn-primary btn-block" data-dismiss="modal">
+            Save Order
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="cartList ==''" style="display: flex; justify-content: center;">
+    <div  class="empty-cart">
+      <p>Your shopping cart empty, add new item</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+   
+    <div class="col-md-12">
+      <p class="page-title">Customers with the number of their orders</p>
+      <table class="table table-responsive table-bordered">
+        <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+             Num Of Orders
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of service.customerorderslist">
+            <td>{{item.name |uppercase}}</td>
+            <td>{{item.ordercount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

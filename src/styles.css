@@ -1,0 +1,322 @@
+.navbar{
+  margin-bottom: 0;;
+}
+.navbar-brand{
+    font-family: monospace;
+    text-transform: uppercase;
+    border-radius: 50%;
+    background-color: #06272a;
+    margin-top: 11px;
+    cursor: pointer;
+    color: white;
+}
+.navbar-inverse {
+   /* background-color: #023a40;
+    border-color: #023034;*/
+    background-color: white;
+    border-color: white;
+    box-shadow: 0px 1px 5px gainsboro;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+    font-size: 17px;
+}
+.navbar-inverse .navbar-nav>li>a:hover ,.navbar-inverse .navbar-nav>li>a:focus{
+  color: rgb(104, 102, 102);
+  
+}
+.stickynavbar{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+.social{
+  float: right;
+  margin-top: 13px;
+  display: flex;
+  justify-content: end;
+ width: 260px;
+}
+.social>img{
+  padding: 10px;
+}
+.thumbnail{
+   /* padding: 8px 15px;
+    margin-bottom: 10px;
+    background: #023a40f2;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #023a40;*/
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    color: black;
+    border-radius: 8px;
+    border: none;
+    position: relative;
+}
+.thumbnail>p{
+  margin: 0 0 10px;
+  position: absolute;
+  top: 200px;
+  left: 15px;
+  padding: 9px 25px;
+  background: #fb8c01;
+  font-size: 14px;
+  font-weight: 600;
+}
+.btn-info{
+ /* background-color: #022a2e;
+  border-color: #023034;*/
+  background-color: gainsboro;
+  border-color: white;
+  width: 100px;
+  color: black;
+  
+}
+.btn-info:hover{
+  /* background-color: #022a2e;
+   border-color: #023034;*/
+   background-color: rgb(184, 183, 183);
+   border-color: white;
+   
+   color: black;
+   
+ }
+@media (max-width: 928px){
+.thumbnail{
+  width: 260px;
+}
+.items>.col-12{
+  display: flex;
+  justify-content: center;
+}
+}
+@media (min-width: 931px){
+  .thumbnail{
+    width: 260px;
+  }
+ .items> .col-12{
+    display: flex;
+    justify-content: center;
+  }
+  }
+  @media (min-width: 971px){
+    .thumbnail{
+      width: 260px;
+    }
+    .items> .col-12{
+      display: flex;
+      justify-content: center;
+    }
+    }
+.main-cart{
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;*/
+  border-radius: 7px;
+  box-shadow: 1px 1px 8px 2px gainsboro;
+}
+.cart{
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 7px;
+  display: inline-table;
+}
+.btn-checkout{
+    border-radius: 25px;
+    padding: 5px 75px;
+    background-color: gainsboro;
+    border: none;
+    color: black;
+}
+.table tbody>tr>td,.table thead>tr>th{
+  border: none;
+  padding: 20px 5px;
+  text-transform: capitalize;
+}
+.table thead>tr>th{
+  text-align: center;
+}
+.total-price{
+  background-color: #e98405;
+  padding: 3px 35px 3px 9px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.modal-header .close {
+  margin-top: -28px;
+}
+/*.menu{
+    background-color: #011d20;
+    color: white;
+}*/
+.menuitems{
+  height: 130px;
+  overflow-y: auto;
+}
+.modal-header{
+    text-align: center;
+    background-color: #fb8c01;
+}
+.catname{
+    text-align: center;
+    background-color: #fb8c01;
+    padding: 8px 0;
+    border-radius: 5px;
+    position: relative;
+    top: -19px;
+    margin-bottom: -5px;
+    font-weight: 600;
+}
+.menu-dialog{
+    width: 90%;
+}
+.modal-header .menuclose {
+    margin-top: -55px;
+}
+.menuimg{
+    width: 250px;
+    height: 200px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+#snackbar{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    color: black; /* White text color */
+    text-align: center; /* Centered text */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    /* 30px from the bottom */
+ 
+    background-color: #fb8c01;
+    border-radius: 10px; /* Rounded borders */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px;
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.1 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    /*-webkit-animation: fadein 0.1s, fadeout 0.5s 2.5s;*/
+    animation: fadein 0.1s, fadeout 0.5s 2.5s;
+  }
+
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  .notification{
+      position: relative;
+
+  }
+  .notification .bage{
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    background-color: #06272a;
+    color: white;
+  }
+
+  .empty-cart{
+    text-align: center;
+    background-color: #fb8c01;
+    padding: 11px 25px;
+    border-radius: 60px;
+    position: absolute;
+    width: fit-content;
+    box-shadow:3px 3px 10px gray;
+  }
+  .empty-cart p{
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+  /*search bar style*/
+  .sticky{
+    position: fixed;
+    top: 20px;
+    
+  }
+
+  /*----input style---*/
+  .myinput{
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 2.7px #023a40;
+  }
+  .myinput:focus{
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 2.7px green;
+  }
+  .btn-operations{
+    border-radius: 50%;
+    background-color: #012326;
+    color: white;
+    border: none;
+    font-weight: 800;
+    padding: 3px 8px;
+    
+  }
+  .fixedtablehead{
+    height: 340px;
+    overflow: auto;
+    width: max-content;
+  }
+  .fixedtablehead thead th{
+    position: sticky;
+    top: -1px;
+    background: white;
+  }
+ 
+  @media (max-width: 425px){
+    .fixedtablehead{
+      
+     
+      width: 300px;
+    }
+  }
+  /*---user profile------*/
+  .profile-card{
+    box-shadow: 1px 1px 7px 1px gray;
+    padding: 35px 20px;
+    margin-top: 5%;
+  }

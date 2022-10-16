@@ -1,0 +1,53 @@
+
+  <div class="form-group row" style="width: 100%;">
+    <div class="col-12 col-md-8">
+      <div class="row">
+
+        <label class="col-sm-4 col-form-lable">Item Name</label>
+        <div class="col-sm-8 form-group">
+          <input type="text" class="form-control myinput" [(ngModel)]="service.item.name"
+          placeholder="Enter Item Name">
+        </div>
+
+        <label class="col-sm-4 col-form-lable">Category</label>
+        <div class="col-sm-8 form-group">
+          <select  class="form-control myinput" [(ngModel)]="service.item.catId">
+            <option value="0">--Select--</option>
+            <option value="{{catName.catId}}" *ngFor="let catName of service.catList">
+              {{catName.catName}}
+            </option>
+          </select>
+        </div>
+     
+        <label class="col-sm-4 col-form-lable">Price</label>
+        <div class="col-sm-8 form-group">
+          <input type="number" class="form-control myinput" placeholder="Enter Item Price" [(ngModel)]="service.item.price">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3">
+      <div class="row">
+        <div class="ml-3 bd-highlight" style="width: 40%;">
+          <img [src]=service.PhotoFilePath height="250px" width="200px;" >
+          <input type="file" [(ngModel)]="service.item.image"  (change)="uploadPhoto($event)" class="mt-2"/>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+  </div>
+  
+ 
+  
+  <button (click)="addItem()" *ngIf="service.item.itemId==0"  class="btn btn-primary btn-block">
+    Add
+  </button>
+  <button (click)="updateItem()" *ngIf="service.item.itemId!=0"  class="btn btn-primary btn-block">
+    Update
+  </button>
+  <div id="snackbar">
+    {{MSGContent}}
+    
+   </div>

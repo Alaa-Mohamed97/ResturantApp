@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-add-edit-item></app-add-edit-item>
+     
+    </div>
+    <div class="col-md-6 item-list">
+      
+      <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Actions</th>
+        
+          </tr>
+        </thead>
+      
+        <tbody>
+          <tr *ngFor="let dataitem of service.itemlist; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{dataitem.name}}</td>
+            
+            <td>{{dataitem.price}}</td>
+            <td>
+              <img src="https://localhost:44388/Photos/{{dataitem.image}}" width="50" height="50">
+        
+            </td>
+            <td>
+              <button type="button" class="btn btn-success mr-3"
+              
+              (click)="editClick(dataitem)">
+                Edit
+              </button>
+            <button class="btn btn-danger" (click)="deleteItem(dataitem)">Delete</button>
+          </td>
+          </tr>
+        </tbody>
+       
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+

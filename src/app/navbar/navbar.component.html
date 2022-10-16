@@ -1,0 +1,132 @@
+<div class="header" style="background-color: #fb8c01;">
+
+  <div class="row" style="margin:0 10%;padding: 20px 0 ;">
+    <!-- logo area -->
+    <div style="float: left;width: 260px;" class="col-md-6 col-sm-12">
+      <a href="https://localhost:44329/" target="_blank" class="navbar-brand">am</a>
+      <span style="font-size: 40px;
+      font-weight: 600;
+      color: white;
+      display: block;
+      font-family: inherit;
+      margin-bottom: -10px;">Food</span>
+      <em style=" font-style: italic;
+      font-family: initial;">the biggest choice of the web</em>
+
+    </div>
+    <!-- social icons area -->
+    <div class="social col-md-6 col-sm-12">
+      <img src="../../assets/img/facebook.png" />
+      <img src="../../assets/img/twitter.png" />
+      <img src="../../assets/img/google.png" />
+    </div>
+  </div>
+
+</div>
+
+<div class="navbar navbar-inverse " id="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a routerLink="home" class="hvr-underline-from-center">
+            Home
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownmenulink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownmenulink" >
+            <a class="dropdown-item" (click)="getitemwithcatid(0)">All</a>
+            <a class="dropdown-item" *ngFor="let catName of serviceItm.catList" 
+            (click)="getitemwithcatid(catName.catId)">{{catName.catName}}</a>
+          
+           
+          </div>
+ 
+        </li>
+
+        <li class="nav-item" *ngIf="userlogin !=false">
+          <a routerLink="shoppingcart" class="hvr-underline-from-center notification">
+            <span> <i style="font-size: 24px;" class="fa">&#xf07a;</i></span>
+            <span class="bage" id="cartcount">{{cartcount}}</span>
+          </a>
+        </li>
+        <li>
+          <a type="button" class="hvr-underline-from-center" style="cursor: pointer;" data-toggle="modal"
+            data-target="#MenuModal" data-backdrop="static" data-keyboard="false">
+            menu
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="userlogin !=false">
+          <a routerLink="orderhistory" class="hvr-underline-from-center">
+            Order history
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="home/id" class="hvr-underline-from-center">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="home" class="hvr-underline-from-center">
+            Contact
+          </a>
+        </li>
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" *ngIf="userlogin !=false">
+        <li>
+          <a routerLink="userprofile" class="hvr-underline-from-center">
+            <span>Hi: {{customerName | uppercase}}</span>
+          </a>
+        </li>
+        <li>
+          <a class="m-1 btn btn-light btn-outline-primary" (click)="Signout()">Logout</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="userlogin ==false">
+
+        <li>
+          <a class="m-1 btn btn-light btn-outline-primary" routerLink="login">Login</a>
+        </li>
+        <li>
+          <a class="m-1 btn btn-light btn-outline-primary" routerLink="register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Menu Modal -->
+<div class="modal fade" id="MenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl menu-dialog" role="document">
+    <div class="modal-content menu">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Menu</h1>
+        <button type="button" class="close menuclose" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="height: 500px;overflow-y: scroll;">
+        <app-menu></app-menu>
+      </div>
+
+    </div>
+  </div>
+</div>

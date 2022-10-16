@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2  class="page-title">Order History</h2>
+    </div>
+  </div>
+  <div *ngIf="service.ordersOfCustomerList==''">
+    <p >
+     you do not make order yet
+    </p>
+  </div>
+  <div class="row">
+      
+      <table class="table table-responsive maintable" *ngFor="let item of service.ordersOfCustomerList">
+        <tr>
+          
+          <th>
+            <button class="accordion" id="{{item.orderno}}" onclick="showPanel(this.id)" > + </button>
+            
+            Order No
+          </th>
+          <th>
+            Address
+          </th>
+          <th>
+            gtotal
+          </th>
+          <th>
+            Order Date
+          </th>
+        </tr>
+        <tr>
+         
+          <td>
+            {{item.orderno}}
+          </td>
+          <td>
+            {{item.address}}
+          </td>
+          <td>
+            {{item.gtotal |currency:"USD"}}
+          </td>
+          <td>
+            
+            {{item.orderdate |date:"dd/MM/yyyy"}}
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="4">
+            <table  id="panel_{{item.orderno}}" class="table table-responsive table-hover panel subtable">
+             
+                <tr>
+                  <th>
+                    Item Name
+                  </th>
+                  <th>
+                     Price
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                </tr>
+             
+              <tr *ngFor="let subitem of item.orderitem">
+                <td>
+                  {{subitem.name}}
+                </td>
+                <td>
+                  {{subitem.price |currency:"USD"}}
+                </td>
+                <td>
+                  {{subitem.quantity}}
+                </td>
+              </tr>
+            
+            
+            </table>
+          </td>
+         
+        </tr>
+      </table>
+ 
+  </div>
+</div>

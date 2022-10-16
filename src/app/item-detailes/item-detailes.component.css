@@ -1,0 +1,7 @@
+.detailes-card{
+    width: max-content;
+    box-shadow: 0px 0px 7px 2px grey;
+    margin-top: 40px;
+    margin-left: 60px;
+    padding: 5px;
+}

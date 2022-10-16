@@ -1,0 +1,15 @@
+.dropdown:hover>.dropdown-menu {
+
+    display: block;
+
+}
+.dropdown-item{
+    display: block;
+    padding:5px 10px;
+    color: black;
+}
+.dropdown-item:hover{
+    background-color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+}
